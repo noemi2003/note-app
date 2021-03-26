@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">ホーム</router-link> |
+      <router-link to="/">home</router-link> |
       <router-link to="/notes/add">ノート追加</router-link> |
       <router-link to="/notes">ノート一覧</router-link>
     </div>
