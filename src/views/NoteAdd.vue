@@ -32,10 +32,13 @@ export default {
       const payload = {
         title: this.title,
         body: this.body,
+        date: new Date(),
       };
       this.$store.commit("addNote", payload);
+      this.$router.push({ name: "Notes" });
       this.title = "";
       this.body = "";
+      this.date = "";
     },
   },
 };

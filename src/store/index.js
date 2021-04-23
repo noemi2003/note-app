@@ -14,6 +14,7 @@ export default new Vuex.Store({
         id: state.notes.length + 1,
         title: payload.title,
         body: payload.body,
+        date: payload.date,
       };
       state.notes.push(newNote);
     },
@@ -23,6 +24,7 @@ export default new Vuex.Store({
         if (note.id === payload.id) {
           note.title = payload.title;
           note.body = payload.body;
+          note.date = payload.date;
         }
       }
       state.notes = newNotes;

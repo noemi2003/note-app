@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <input type="text" v-model="title"  />
+    <input type="text" v-model="title" />
     <textarea cols="30" rows="10" v-model="body"> </textarea>
     <div class="button">
       <button @click="del">消去</button>
@@ -41,18 +41,19 @@ export default {
         title: this.title,
         body: this.body,
         id: this.id,
+        date: new Date(),
       };
       this.$store.commit("updateNote", payload);
       this.$router.push({ name: "Notes" });
     },
 
-    del(){
+    del() {
       const payload = {
         id: this.id,
       };
       this.$store.commit("deleteNote", payload);
       this.$router.push({ name: "Notes" });
-    }
+    },
   },
 };
 </script>

@@ -3,6 +3,7 @@
     <div v-for="note in notes" :key="note.id">
       <button @click="transition(note.id)">
         <a>{{ note.title }}</a>
+        <p>{{ note.date.toLocaleString() }}</p>
       </button>
     </div>
   </div>
