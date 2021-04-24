@@ -1,9 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import NoteAdd from "../views/NoteAdd.vue";
-import Notes from "../views/Notes.vue";
-import NoteShow from "../views/NoteShow.vue";
+import MemoAdd from "../views/MemoAdd.vue";
+import Memos from "../views/Memos.vue";
+import MemoDetail from "../views/MemoDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -14,19 +14,19 @@ const routes = [
     component: Home,
   },
   {
-    path: "/notes/add",
-    name: "NoteAdd",
-    component: NoteAdd,
+    path: "/memos/add",
+    name: "MemoAdd",
+    component: MemoAdd,
   },
   {
-    path: "/notes",
-    name: "Notes",
-    component: Notes,
+    path: "/memos",
+    name: "Memos",
+    component: Memos,
   },
   {
-    path: "/notes/:id",
-    name: "NoteShow",
-    component: NoteShow,
+    path: "/memos/:id",
+    name: "MemoDetail",
+    component: MemoDetail,
     props: true,
   },
 ];

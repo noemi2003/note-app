@@ -6,33 +6,33 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    notes: [],
+    memos: [],
   },
   mutations: {
     addNote(state, payload) {
       const newNote = {
-        id: state.notes.length + 1,
+        id: state.memos.length + 1,
         title: payload.title,
         body: payload.body,
         date: payload.date,
       };
-      state.notes.push(newNote);
+      state.memos.push(newNote);
     },
     updateNote(state, payload) {
-      const newNotes = state.notes.slice();
-      for (const note of newNotes) {
-        if (note.id === payload.id) {
-          note.title = payload.title;
-          note.body = payload.body;
-          note.date = payload.date;
+      const newmemos = state.memos.slice();
+      for (const memo of newmemos) {
+        if (memo.id === payload.id) {
+          memo.title = payload.title;
+          memo.body = payload.body;
+          memo.date = payload.date;
         }
       }
-      state.notes = newNotes;
+      state.memos = newmemos;
     },
     deleteNote(state, payload) {
       // const vegetables = ["tomato", "lemon", "watermelon"];
       // const fruits = vegetables.filter(v => v !== "tomato");
-      state.notes = state.notes.filter((note) => note.id !== payload.id);
+      state.memos = state.memos.filter((memo) => memo.id !== payload.id);
     },
-  }
+  },
 });

@@ -18,8 +18,9 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "NoteAdd",
+  name: "MemoAdd",
   data() {
     return {
       title: "",
@@ -28,17 +29,13 @@ export default {
   },
   computed: {},
   methods: {
-    save() {
+    async save() {
       const payload = {
         title: this.title,
         body: this.body,
-        date: new Date(),
       };
-      this.$store.commit("addNote", payload);
-      this.$router.push({ name: "Notes" });
-      this.title = "";
-      this.body = "";
-      this.date = "";
+      await axios.post("http://127.0.0.1:8003/api/memos", payload);
+      this.$router.push({ name: "Memos" });
     },
   },
 };
